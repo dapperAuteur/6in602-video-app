@@ -1,4 +1,3 @@
-/* trunk-ignore-all(eslint) */
 import axios from 'axios';
 import { useCallback, useState } from 'react';
 import { NextPageContext } from 'next';

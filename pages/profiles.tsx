@@ -1,4 +1,3 @@
-/* trunk-ignore-all(eslint) */
 import { NextPageContext } from "next";
 import { getSession, useSession } from "next-auth/react";
 import { useRouter } from "next/router";

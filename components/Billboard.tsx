@@ -1,4 +1,3 @@
-/* trunk-ignore-all(eslint) */
 import React, { useCallback } from 'react';
 import { InformationCircleIcon } from '@heroicons/react/24/outline';
 

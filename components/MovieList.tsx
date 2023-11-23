@@ -1,4 +1,3 @@
-/* trunk-ignore-all(eslint) */
 import React from 'react';
 
 import { MovieInterface } from '@/types';

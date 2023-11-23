@@ -1,4 +1,3 @@
-/* trunk-ignore-all(eslint) */
 import React from 'react';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';

@@ -1,4 +1,3 @@
-/* trunk-ignore-all(eslint) */
 import { signOut } from 'next-auth/react';
 import React from 'react';
 

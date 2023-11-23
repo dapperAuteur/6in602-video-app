@@ -1,4 +1,3 @@
-/* trunk-ignore-all(eslint) */
 import React from 'react';
 import { NextPageContext } from 'next';
 import { getSession } from 'next-auth/react';
