@@ -32,10 +32,41 @@ const Home = () => {
   const { data: favorites = [] } = useFavorites();
   const {isOpen, closeModal} = useInfoModalStore();
 
+  const MenuItems = [
+    {
+      name: 'For Hire',
+      href: '/for-hire'
+    },
+    {
+      name: 'FAQ',
+      href: '/faq'
+    },
+    {
+      name: 'Sports',
+      href: '/sports'
+    },
+    {
+      name: 'Live Music',
+      href: '/live-music'
+    },
+    {
+      name: 'Media List',
+      href: '/media-list'
+    },
+    {
+      name: 'GroWitUS',
+      href: 'gro-wit-us'
+    },
+    {
+      name: 'Dashboard',
+      href: 'dashboard'
+    }
+  ]
+
   return (
     <>
       <InfoModal visible={isOpen} onClose={closeModal} />
-      <Navbar />
+      <Navbar menuItems={MenuItems} />
       <Billboard />
       <div className="pb-40">
         <MovieList title="Trending Now" data={movies} />
