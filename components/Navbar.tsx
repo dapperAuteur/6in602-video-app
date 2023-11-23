@@ -51,7 +51,7 @@ const Navbar = () => {
         </div>
         <div onClick={toggleMobileMenu} className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative">
           <p className="text-white text-sm">Browse</p>
-          <ChevronDownIcon className={`w-4 text-white fill-white transition ${showMobileMenu ? 'rotate-180' : 'rotate-0'}`} />
+          <ChevronDownIcon className={`w-4 text-white fill-white transition ${showMobileMenu ? 'rotate-0' : 'rotate-180'}`} />
           <MobileMenu visible={showMobileMenu} />
         </div>
         <div className="flex flex-row ml-auto gap-7 items-center">
@@ -65,7 +65,7 @@ const Navbar = () => {
             <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
               <img src="/images/default-blue.png" alt="" />
             </div>
-            <ChevronDownIcon className={`w-4 text-white fill-white transition ${showAccountMenu ? 'rotate-180' : 'rotate-0'}`} />
+            <ChevronDownIcon className={`w-4 text-white fill-white transition ${showAccountMenu ? 'rotate-0' : 'rotate-180'}`} />
             <AccountMenu visible={showAccountMenu} />
           </div>
         </div>
