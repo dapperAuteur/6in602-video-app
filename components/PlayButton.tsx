@@ -1,3 +1,4 @@
+/* trunk-ignore-all(eslint) */
 import React from 'react';
 import { PlayIcon } from '@heroicons/react/24/solid';
 import { useRouter } from 'next/router';

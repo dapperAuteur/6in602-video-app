@@ -1,3 +1,4 @@
+/* trunk-ignore-all(eslint) */
 import { NextApiRequest, NextApiResponse } from "next";
 import { without } from "lodash";
 

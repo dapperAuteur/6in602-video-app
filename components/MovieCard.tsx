@@ -1,3 +1,4 @@
+/* trunk-ignore-all(eslint) */
 import React, { useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';

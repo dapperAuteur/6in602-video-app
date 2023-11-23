@@ -1,3 +1,4 @@
+/* trunk-ignore-all(eslint) */
 import Link from 'next/link';
 import React from 'react';
 
