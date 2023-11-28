@@ -4,12 +4,12 @@ import { useState, useEffect } from 'react';
 import MovieCard from '@/components/MovieCard';
 import Link from 'next/link';
 
-interface MediaListProps {
+interface LiveMusicProps {
   data: MovieInterface[];
   title: string;
 }
 
-const MediaList: React.FC<MediaListProps> = () => {
+const LiveMusic: React.FC<LiveMusicProps> = () => {
 
   const [media, setMedia] = useState(null);
   const [isLoading, setLoading] = useState(true);
@@ -31,7 +31,7 @@ const MediaList: React.FC<MediaListProps> = () => {
   return (
     <div className="px-4 md:px-12 mt-4 space-y-8">
       <Link href='/'>
-        <div className='text-center text-white text-3xl'>Media List</div>
+        <div className='text-center text-white text-3xl'>Live Music</div>
       </Link>
       <div>
         <div className="grid grid-cols-4 gap-2">
@@ -46,4 +46,4 @@ const MediaList: React.FC<MediaListProps> = () => {
   )
 }
 
-export default MediaList
+export default LiveMusic
