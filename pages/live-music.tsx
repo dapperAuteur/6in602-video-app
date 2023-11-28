@@ -11,7 +11,7 @@ interface LiveMusicProps {
 
 const LiveMusic: React.FC<LiveMusicProps> = () => {
 
-  const [media, setMedia] = useState([]);
+  const [media, setMedia] = useState<any []>([]);
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
