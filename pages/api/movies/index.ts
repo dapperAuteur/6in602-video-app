@@ -11,7 +11,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // await serverAuth(req, res);
 
     const movies = await prismadb.movie.findMany();
-    console.log('movies :>> ', movies);
+    // console.log('movies :>> ', movies);
 
     return res.status(200).json(movies);
   } catch (error) {
