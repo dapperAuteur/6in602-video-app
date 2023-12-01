@@ -8,6 +8,7 @@ const Watch = () => {
   const { movieId } = router.query;
 
   const { data } = useMovie(movieId as string);
+  console.log('[movieId] data :>> ', data);
   
   return (
     <div className="h-screen w-screen bg-black">
@@ -17,7 +18,7 @@ const Watch = () => {
           <span className="font-light">Watching:</span> {data?.title}
         </p>
       </nav>
-      <video className="h-full w-full" autoPlay controls src={data?.videoUrl}></video>
+      <video className="h-full w-full" autoPlay controls src={data?.media_link}></video>
     </div>
   )
 }

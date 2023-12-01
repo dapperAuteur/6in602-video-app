@@ -3,6 +3,7 @@ export interface MovieInterface {
   title: string;
   description: string;
   thumbnailUrl: string;
+  thumbnail_url: string;
   media_link: string;
   duration: string;
   genre: string;
