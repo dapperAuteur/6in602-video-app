@@ -3,7 +3,11 @@ import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
 import useMovie from '@/hooks/useMovie';
 
-const Watch = () => {
+interface WatchProps {
+  media_link?: string;
+}
+
+const Watch: React.FC<WatchProps> = () => {
   const router = useRouter();
   const { movieId } = router.query;
   const media_link = router.query.media_link;
