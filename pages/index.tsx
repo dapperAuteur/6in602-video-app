@@ -1,6 +1,8 @@
 import React from 'react';
 // import { NextPageContext } from 'next';
 // import { getSession } from 'next-auth/react';
+import { fetcher } from '@/libs/fetcher';
+import useSWR from 'swr';
 
 import Navbar from '@/components/Navbar';
 import Billboard from '@/components/Billboard';
@@ -27,10 +29,23 @@ import useInfoModalStore from '@/hooks/useInfoModalStore';
 //   }
 // }
 
+const findMedia = `
+  findMedia{
+    media{
+      _id
+      title
+      media_link
+      thumbnail_url
+      description
+    }
+  }
+`
+
 const Home = () => {
-  const { data: movies = [] } = useMovieList();
+  const { media: movies = [] } = useMovieList();
   const { data: favorites = [] } = useFavorites();
   const {isOpen, closeModal} = useInfoModalStore();
+  // console.log('Home movies :>> ', movies);
 
   const MenuItems = [
     {

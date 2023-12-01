@@ -5,17 +5,24 @@ import PlayButton from '@/components/PlayButton';
 import FavoriteButton from '@/components/FavoriteButton';
 import useInfoModalStore from '@/hooks/useInfoModalStore';
 import useMovie from '@/hooks/useMovie';
+import { MediaInterface } from '@/types';
 
 interface InfoModalProps {
   visible?: boolean;
   onClose: any;
+  data?: MediaInterface;
+  description?: string;
+  media_link?: string;
+  thumbnail_url?: string;
+  title?: string;
 }
 
-const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
+const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose, description, media_link, title, thumbnail_url }) => {
   const [isVisible, setIsVisible] = useState<boolean>(!!visible);
 
   const { movieId } = useInfoModalStore();
   const { data = {} } = useMovie(movieId);
+  // console.log('InfoModal title :>> ', title);
 
   useEffect(() => {
     setIsVisible(!!visible);
@@ -38,7 +45,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
         <div className={`${isVisible ? 'scale-100' : 'scale-0'} transform duration-300 relative flex-auto bg-zinc-900 drop-shadow-md`}>
 
           <div className="relative h-96">
-            <video poster={data?.thumbnailUrl} autoPlay muted loop src={data?.videoUrl} className="w-full brightness-[60%] object-cover h-full" />
+            <video poster={data?.thumbnail_url} autoPlay muted loop src={data?.media_link} className="w-full brightness-[60%] object-cover h-full" />
             <div onClick={handleClose} className="cursor-pointer absolute top-3 right-3 h-10 w-10 rounded-full bg-black bg-opacity-70 flex items-center justify-center">
               <XMarkIcon className="text-white w-6" />
             </div>
@@ -47,7 +54,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
                 {data?.title}
               </p>
               <div className="flex flex-row gap-4 items-center">
-                <PlayButton movieId={data?.id} />
+                <PlayButton movieId={data?._id} media_link={data?.media_link} title={data?.title} description={data?.description} />
                 {/* <FavoriteButton movieId={data?.id} /> */}
               </div>
             </div>
@@ -62,7 +69,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
                 {data?.duration}
               </p>
               <p className="text-white text-lg">
-                {data?.genre}
+                {data?.title}
               </p>
             </div>
             <p className="text-white text-lg">

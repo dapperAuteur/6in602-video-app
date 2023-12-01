@@ -4,14 +4,24 @@ import { useRouter } from 'next/router';
 
 interface PlayButtonProps {
   movieId: string;
+  media_link: string;
+  title: string;
+  description: string;
 }
 
-const PlayButton: React.FC<PlayButtonProps> = ({ movieId }) => {
+const PlayButton: React.FC<PlayButtonProps> = ({ movieId, media_link, title, description }) => {
   const router = useRouter();
 
   return (
     <button 
-      onClick={() => router.push(`/watch/${movieId}`)}
+      onClick={() => router.push({
+        pathname: `/watch/${movieId}?`,
+        query: {
+          media_link: media_link,
+          title: title,
+          description: description,
+        },
+      })}
       className="
         bg-white 
         rounded-md 

@@ -51,7 +51,7 @@ const Navbar: React.FC<MenuProps> = ({menuItems}) => {
         <Link href='/'>
           <img src="/images/logo.png" className="h-4 lg:h-7" alt="Logo" />
         </Link>
-        <div className="flex-row ml-8 gap-7 hidden lg:flex">
+        {/* <div className="flex-row ml-8 gap-7 hidden lg:flex">
           {
             menuItems?.map((menuItem) => (
               <NavbarItem
@@ -61,15 +61,15 @@ const Navbar: React.FC<MenuProps> = ({menuItems}) => {
                 />
             ))
           }
-        </div>
-        <div onClick={toggleMobileMenu} className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative">
+        </div> */}
+        {/* <div onClick={toggleMobileMenu} className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative">
           <p className="text-white text-sm">Browse</p>
           <ChevronDownIcon className={`w-4 text-white fill-white transition ${showMobileMenu ? 'rotate-0' : 'rotate-180'}`} />
           <MobileMenu
             menuItems={menuItems}
             visible={showMobileMenu}
           />
-        </div>
+        </div> */}
         <div className="flex flex-row ml-auto gap-7 items-center">
           <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
             <MagnifyingGlassIcon className="w-6" />

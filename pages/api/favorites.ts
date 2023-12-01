@@ -19,7 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
     });
 
-    console.log('favoritedMovies :>> ', favoritedMovies);
+    // console.log('favoritedMovies :>> ', favoritedMovies);
 
     return res.status(200).json(favoritedMovies);
   } catch (error) {
