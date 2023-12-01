@@ -5,18 +5,24 @@ import PlayButton from '@/components/PlayButton';
 import FavoriteButton from '@/components/FavoriteButton';
 import useInfoModalStore from '@/hooks/useInfoModalStore';
 import useMovie from '@/hooks/useMovie';
+import { MediaInterface } from '@/types';
 
 interface InfoModalProps {
   visible?: boolean;
   onClose: any;
+  data?: MediaInterface;
+  description?: string;
+  media_link?: string;
+  thumbnail_url?: string;
+  title?: string;
 }
 
-const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
+const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose, description, media_link, title, thumbnail_url }) => {
   const [isVisible, setIsVisible] = useState<boolean>(!!visible);
 
   const { movieId } = useInfoModalStore();
   const { data = {} } = useMovie(movieId);
-  // console.log('InfoModal data :>> ', data);
+  console.log('InfoModal title :>> ', title);
 
   useEffect(() => {
     setIsVisible(!!visible);
@@ -63,7 +69,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
                 {data?.duration}
               </p>
               <p className="text-white text-lg">
-                {data?.genre}
+                {data?.title}
               </p>
             </div>
             <p className="text-white text-lg">

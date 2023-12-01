@@ -9,7 +9,7 @@ export function fetcher(query: any) {
   })
     .then((res) => res.json())
     .then((json) => {
-      console.log('fetcher json.data :>> ', json.data);
+      // console.log('fetcher json.data :>> ', json.data);
       return json.data;
     })
 }

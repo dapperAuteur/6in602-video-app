@@ -4,6 +4,13 @@ import { InformationCircleIcon } from '@heroicons/react/24/outline';
 import PlayButton from '@/components/PlayButton';
 import useBillboard from '@/hooks/useBillboard';
 import useInfoModalStore from '@/hooks/useInfoModalStore';
+import { MediaInterface } from '@/types';
+
+interface MovieListProps {
+  media: MediaInterface[];
+  title: string;
+  media_link: string;
+}
 
 const Billboard: React.FC = () => {
   const { openModal } = useInfoModalStore();
@@ -12,7 +19,13 @@ const Billboard: React.FC = () => {
   // convert id to _id
   // console.log('media :>> ', media);
   const handleOpenModal = useCallback(() => {
-    openModal(media?._id);
+    openModal(
+      media?._id,
+      media?.description,
+      media?.media_link,
+      media?.thumbnail_url,
+      media?.title
+      );
   }, [openModal, media?._id]);
 
 
@@ -28,7 +41,7 @@ const Billboard: React.FC = () => {
           {media?.description}
         </p>
         <div className="flex flex-row items-center mt-3 md:mt-4 gap-3">
-          <PlayButton movieId={media?._id} />
+          {/* <PlayButton movieId={media?._id} media_link={media?.media_link} title={media?.title} />
           <button
             onClick={handleOpenModal}
             className="
@@ -50,7 +63,7 @@ const Billboard: React.FC = () => {
             >
               <InformationCircleIcon className="w-4 md:w-7 mr-1" />
               More Info
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
