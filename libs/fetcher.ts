@@ -1,8 +1,5 @@
-import axios from 'axios';
-
-// const fetcher = (url: string) => axios.get(url).then(res => res.data);
 export function fetcher(query) {
-  // console.log("fetcher");
+  // console.log("fetcher query", query);
   return fetch('https://code-word-list.witus.online/api/graphql', {
     method: 'POST',
     headers: {
@@ -11,5 +8,8 @@ export function fetcher(query) {
     body: JSON.stringify({ query }),
   })
     .then((res) => res.json())
-    .then((json) => json.data)
+    .then((json) => {
+      console.log('fetcher json.data :>> ', json.data);
+      return json.data;
+    })
 }
