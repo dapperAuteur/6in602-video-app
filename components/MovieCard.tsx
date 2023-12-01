@@ -19,7 +19,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
 
   return (
     <div className="group bg-zinc-900 col-span relative h-[12vw]">
-      <img onClick={redirectToWatch} src={data.thumbnailUrl} alt={data.genre} draggable={false} className="
+      <img onClick={redirectToWatch} src={data.thumbnail_url} alt={data.title} draggable={false} className="
         cursor-pointer
         object-cover
         transition
@@ -49,7 +49,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
         group-hover:translate-x-[2vw]
         group-hover:opacity-100
       ">
-        <img onClick={redirectToWatch} src={data.thumbnailUrl} alt={data.genre} draggable={false} className="
+        <img onClick={redirectToWatch} src={data.thumbnail_url} alt={data.title} draggable={false} className="
           cursor-pointer
           object-cover
           transition
@@ -80,7 +80,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
             </div>
           </div>
           <p className="text-green-400 font-semibold mt-4">
-            {data.genre} <span className="text-white">{data.title}</span>
+            {data.description} <span className="text-white">{data.title}</span>
           </p>
           <div className="flex flex-row mt-4 gap-2 items-center"> 
             <p className="text-white text-[10px] lg:text-sm">{data.duration}</p>
