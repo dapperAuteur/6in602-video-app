@@ -3,11 +3,11 @@ import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
 import useMovie from '@/hooks/useMovie';
 
-interface WatchProps {
-  media_link?: string;
-}
+// interface WatchProps {
+//   media_link?: string;
+// }
 
-const Watch: React.FC<WatchProps> = () => {
+const Watch = () => {
   const router = useRouter();
   const { movieId } = router.query;
   const media_link = router.query.media_link;
@@ -15,7 +15,7 @@ const Watch: React.FC<WatchProps> = () => {
   // console.log('[movieId] movieId :>> ', movieId);
   // console.log('[movieId] media_link :>> ', media_link);
 
-  const { data } = useMovie(movieId as string);
+  const { data } = useMovie(movieId);
   // console.log('[movieId] data :>> ', data);
   
   return (
