@@ -1,4 +1,4 @@
-export function fetcher(query) {
+export function fetcher(query/*: any*/) {
   // console.log("fetcher query", query);
   return fetch('https://code-word-list.witus.online/api/graphql', {
     method: 'POST',
