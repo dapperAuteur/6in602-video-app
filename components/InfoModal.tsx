@@ -22,7 +22,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose, description, me
 
   const { movieId } = useInfoModalStore();
   const { data = {} } = useMovie(movieId);
-  console.log('InfoModal title :>> ', title);
+  // console.log('InfoModal title :>> ', title);
 
   useEffect(() => {
     setIsVisible(!!visible);
