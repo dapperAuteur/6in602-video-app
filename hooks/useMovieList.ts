@@ -4,7 +4,8 @@ import { fetcher } from '@/libs/fetcher';
 const useMovies = () => {
   const { data, error, isLoading } = useSwr(`
     {
-      findMedia{
+      findMedia(limit: 100){
+        count
       media{
         _id
         title
@@ -21,7 +22,7 @@ const useMovies = () => {
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
   });
-  // console.log('useMovies data :>> ', data);
+  console.log('useMovies data :>> ', data);
   let media = data?.findMedia?.media;
   // console.log('useMovies media :>> ', media);
   return {
