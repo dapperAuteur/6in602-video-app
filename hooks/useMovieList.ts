@@ -22,7 +22,7 @@ const useMovies = () => {
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
   });
-  console.log('useMovies data :>> ', data);
+  // console.log('useMovies data :>> ', data);
   let media = data?.findMedia?.media;
   // console.log('useMovies media :>> ', media);
   return {
