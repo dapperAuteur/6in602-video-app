@@ -37,6 +37,7 @@ const findMedia = `
       media_link
       thumbnail_url
       description
+      externalMediaFile
     }
   }
 `

@@ -18,6 +18,7 @@ model User {
   email String? @unique
   emailVerified DateTime?
   hashedPassword String?
+  role String?
   sessions Session[]
   accounts Account[]
   favoriteIds String[] @db.ObjectId
@@ -80,7 +81,7 @@ model Movie {
   name String
   title String
   description String
-  media_link String
+  externalMediaFile String
   thumbnailUrl String
   genre String
   duration String

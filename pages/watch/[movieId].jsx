@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/router';
 import useMovie from '@/hooks/useMovie';
+import AdiloEmbedWidget from './../../components/cousin/AdiloEmbedWidget'
 
 // interface WatchProps {
 //   media_link?: string;
@@ -10,13 +11,11 @@ import useMovie from '@/hooks/useMovie';
 const Watch = () => {
   const router = useRouter();
   const { movieId } = router.query;
-  const media_link = router.query.media_link;
+  const externalMediaFile = router.query.externalMediaFile;
   const title = router.query.title;
-  // console.log('[movieId] movieId :>> ', movieId);
-  // console.log('[movieId] media_link :>> ', media_link);
+  console.log('[movieId] externalMediaFile :>> ', externalMediaFile);
 
   const { data } = useMovie(movieId);
-  // console.log('[movieId] data :>> ', data);
   
   return (
     <div className="h-screen w-screen bg-black">
@@ -26,7 +25,7 @@ const Watch = () => {
           <span className="font-light">Watching:</span> {title}
         </p>
       </nav>
-      <video className="h-full w-full" autoPlay controls src={media_link}></video>
+      <AdiloEmbedWidget dataId={externalMediaFile}/>
     </div>
   )
 }

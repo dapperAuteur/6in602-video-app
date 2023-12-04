@@ -14,17 +14,18 @@ interface MovieCardProps {
 const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
   const router = useRouter();
   const { openModal } = useInfoModalStore();
+  // console.log('data :>> ', data);
 
   // const redirectToWatch = useCallback(() => router.push(`/watch/${data?._id}`), [router, data?._id]);
 
   const redirectToWatch = useCallback(() => router.push({
     pathname: `/watch/${data?._id}?`,
     query: {
-      media_link: data?.media_link,
+      externalMediaFile: data?.externalMediaFile,
       title: data?.title,
       description: data?.description,
     },
-  }), [router, data?._id])
+  }), [router, data?._id, data?.externalMediaFile, data?.title, data?.description])
 
   return (
     <div className="group bg-zinc-900 col-span relative h-[12vw]">
