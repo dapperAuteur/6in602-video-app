@@ -6,7 +6,7 @@ import Navbar from '@/components/Navbar';
 
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
-  console.log('session :>> ', session);
+  // console.log('session :>> ', session);
 
   if (!session) {
     return {
