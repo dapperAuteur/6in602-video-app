@@ -8,8 +8,8 @@ const useMovies = () => {
         count
       media{
         _id
+        externalMediaFile
         title
-        media_link
         thumbnail_url
         description
         duration

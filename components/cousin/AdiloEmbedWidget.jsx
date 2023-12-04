@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 
 const AdiloEmbedWidget = ({dataId}) => {
-  console.log('dataId :>> ', dataId);
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://cdn.bigcommand.com/dynamic-embed/js/inline.js';
